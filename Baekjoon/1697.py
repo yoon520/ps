@@ -2,7 +2,7 @@ from collections import deque
 
 # 이동 방향
 move = [-1, 1, 2]
-MAX_LENGTH = 100001
+MAX_LENGTH = 100000
 
 def bfs(start, end):
     global level, MAX_LENGTH
@@ -25,8 +25,8 @@ def bfs(start, end):
                 if 0 <= now <= MAX_LENGTH and v[now] == 0:
                     q.append(now)
                     v[now] = 1
-
-        # 같은 level의 자식 노드 탐색이 끝났다면 level 증가(이동 횟수 증가)
+                    
+        # 같은 level의 노드 탐색이 끝났다면 level 증가(이동 횟수 증가)
         level += 1
 
 n, k = map(int, input().split())
